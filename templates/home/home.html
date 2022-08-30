@@ -1,0 +1,38 @@
+{% extends 'base.html' %}
+{% block title %} Home {% endblock %}
+{% block content %}
+
+    <div class="container row mt-5 text-center" style="margin-left: auto; margin-right: auto">
+        {% for meal in meals %}
+
+            <div class="col-lg-4 col-sm-12 mb-3">
+                <div class="card" style="width:18rem">
+                    <img src="{{ meal.strMealThumb }}" class="card-img-top">
+                    <div class="card-body">
+                        <h5 class="card-title">{{ meal.strMeal }}</h5>
+
+                        <form method="get" action="singleMeal">
+                            <input type="text" style="display: none" name="mealId" value="{{ meal.idMeal }}"/>
+                            <input class="submit-btn" type="submit" value="More Info"/>
+                        </form>
+
+                    </div>
+
+                </div>
+
+            </div>
+
+
+
+
+
+        {% endfor %}
+    </div>
+
+
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.0-beta1/dist/js/bootstrap.min.js"
+            integrity="sha384-kjU+l4N0Yf4ZOJErLsIcvOU2qSb74wXpOhqTvwVx3OElZRweTnQ6d31fXEoRD1Jy"
+            crossorigin="anonymous"></script>
+
+
+{% endblock %}

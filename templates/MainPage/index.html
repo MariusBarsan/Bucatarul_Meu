@@ -1,0 +1,129 @@
+{% extends 'base.html' %}
+{% block title %} Home {% endblock %}
+{% block content %}
+    {% load static %}
+
+       <div class="container">
+        <div class="row">
+            <div class="col-md-6 offset-md-3">
+                <div class="card">
+                    <div class="card-header">
+                        <h2>Login</h2>
+                    </div>
+                    <form method="post">
+{#                        {% csrf_token %}#}
+                        <div class="card-body">
+{#                            {{ form.as_p }}#}
+                            <p>Ingredient 1</p>
+                            <p>Ingredient 2</p>
+                            <p>Ingredient 3</p>
+                            <p>Ingredient 4</p>
+                            <p>Ingredient 5</p>
+                        </div>
+                        <div class="card-footer">
+                            <button type="submit" class="btn btn-outline-success">Submit</button>
+
+                        </div>
+                    </form>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div id="myCarousel" class="carousel slide" data-bs-ride="carousel">
+        <ol class="carousel-indicators">
+            <li data-bs-target="#myCarousel" data-bs-slide-to="0" class="active"></li>
+            <li data-bs-target="#myCarousel" data-bs-slide-to="1"></li>
+            <li data-bs-target="#myCarousel" data-bs-slide-to="2"></li>
+        </ol>
+        <div class="carousel-inner">
+            <div class="carousel-item active">
+                <div class="overlay-image">
+                    <img src="{% static 'images/alex-munsell-Yr4n8O_3UPc-unsplash.jpg' %}">
+                </div>
+                <div class="container_carousel">
+                    <h1>Retete fresh</h1>
+                    <p>De fiecare data cand publicam o reteta noua primesti o notificare pe mail!</p>
+                    <a href='#' class="btn btn-lg btn-primary">
+                        Sign Up Today
+                    </a>
+                </div>
+            </div>
+            <div class="carousel-item">
+                <div class="overlay-image">
+                    <img src="{% static 'images/anna-pelzer-IGfIGP5ONV0-unsplash (1).jpg' %}">
+                </div>
+                <div class="container_carousel">
+                    <h1>Ai deja cont?</h1>
+                    <p>Aici te poti loga pe bucatarulM.eu!</p>
+                    <a href='#' class="btn btn-lg btn-primary">
+                        Log in now
+                    </a>
+                </div>
+            </div>
+            <div class="carousel-item">
+                <div class="overlay-image">
+                    <img src="{% static 'images/lily-banse--YHSwy6uqvk-unsplash.jpg' %}">
+                </div>
+                <div class="container_carousel">
+                    <h1>Gateste cu ce ai pe acasa</h1>
+                    <p>Toti intram in pana de idei. Cauta retete in functie de produsele pe care le ai deja acasa!</p>
+                    <a href='#' class="btn btn-lg btn-primary">
+                        Cauta dupa ingrediente
+                    </a>
+                </div>
+            </div>
+        </div>
+    </div>
+
+
+
+    <div class="container row mt-5 text-center" style="margin-left: auto; margin-right: auto">
+        {% for meal in meals %}
+
+            <div class="col-lg-4 col-sm-12 mb-3">
+                <div class="card" style="width:18rem">
+                    <img src="{{ meal.strMealThumb }}" class="card-img-top">
+                    <div class="card-body">
+                        <h5 class="card-title">{{ meal.strMeal }}</h5>
+
+                        <form method="get" action="singleMeal">
+                            <input type="text" style="display: none" name="mealId" value="{{ meal.idMeal }}"/>
+                            <div class="container">
+                                <div class="row">
+                                    <div class="text-center">
+                                        <div class="testing">
+                                            <a href="#">
+                                                <input class="submit-btn" type="submit" value="More Info"/>
+
+                                                <div class="liquid"></div>
+                                            </a>
+
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </form>
+
+                    </div>
+
+                </div>
+
+            </div>
+
+
+
+
+
+        {% endfor %}
+
+
+    </div>
+
+
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.0-beta1/dist/js/bootstrap.min.js"
+            integrity="sha384-kjU+l4N0Yf4ZOJErLsIcvOU2qSb74wXpOhqTvwVx3OElZRweTnQ6d31fXEoRD1Jy"
+            crossorigin="anonymous"></script>
+
+
+{% endblock %}
