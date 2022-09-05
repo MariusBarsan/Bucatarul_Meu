@@ -3,32 +3,6 @@
 {% block content %}
     {% load static %}
 
-       <div class="container">
-        <div class="row">
-            <div class="col-md-6 offset-md-3">
-                <div class="card">
-                    <div class="card-header">
-                        <h2>Login</h2>
-                    </div>
-                    <form method="post">
-{#                        {% csrf_token %}#}
-                        <div class="card-body">
-{#                            {{ form.as_p }}#}
-                            <p>Ingredient 1</p>
-                            <p>Ingredient 2</p>
-                            <p>Ingredient 3</p>
-                            <p>Ingredient 4</p>
-                            <p>Ingredient 5</p>
-                        </div>
-                        <div class="card-footer">
-                            <button type="submit" class="btn btn-outline-success">Submit</button>
-
-                        </div>
-                    </form>
-                </div>
-            </div>
-        </div>
-    </div>
 
     <div id="myCarousel" class="carousel slide" data-bs-ride="carousel">
         <ol class="carousel-indicators">
@@ -44,7 +18,7 @@
                 <div class="container_carousel">
                     <h1>Retete fresh</h1>
                     <p>De fiecare data cand publicam o reteta noua primesti o notificare pe mail!</p>
-                    <a href='#' class="btn btn-lg btn-primary">
+                    <a href='{% url 'create-user' %}' class="btn btn-lg btn-primary">
                         Sign Up Today
                     </a>
                 </div>
@@ -56,7 +30,7 @@
                 <div class="container_carousel">
                     <h1>Ai deja cont?</h1>
                     <p>Aici te poti loga pe bucatarulM.eu!</p>
-                    <a href='#' class="btn btn-lg btn-primary">
+                    <a href='{% url 'login' %}' class="btn btn-lg btn-primary">
                         Log in now
                     </a>
                 </div>
