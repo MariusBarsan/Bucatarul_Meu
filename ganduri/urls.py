@@ -6,7 +6,7 @@ from . import views
 
 urlpatterns = [
     path('search/', views.search, name='search'),
-    path('<slug:category_slug>/<slug:slug>/', views.detail, name='post_detail'),
-    path('<slug:slug>/', views.category, name='category_detail'),
+    path('category/<slug:category_slug>/<slug:slug>/', views.detail, name='post_detail'),
+    path('category/<slug:slug>/', views.category, name='category_detail'),
 
 ] + static(settings.MEDIA_URL, document_root=settings.MEDIA_ROOT)
