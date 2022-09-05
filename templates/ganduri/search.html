@@ -1,6 +1,6 @@
 {% extends 'core/base.html' %}
 
-{% block title %}bucatarulM.eu blog{% endblock %}
+{% block title %} Cautare | {% endblock %}
 
 {% block content %}
     <section class="hero">
@@ -9,19 +9,23 @@
                 <section class="section">
                     <div class="columns">
                         <div class="column is-8 is-offset-2">
+                            <div class="content is-medium">
+                                <h1>Rezultate cautare</h1>
+                                <h3>Query "{{ query }}</h3>
+
+                            </div>
                             {% for post in posts %}
                                 <div class="content is-medium">
                                     <a href="{% url 'post_detail' post.category.slug post.slug %}">
-                                        {% if post.image %}
-                                            <figure class="image">
-                                                <img src="{{ post.image.url }}">
-                                            </figure>
-                                        {% endif %}
                                         <h2 class="subtitle is-4">{{ post.created_at |date:'d-m-Y H:i' }}</h2>
                                         <h1 class="title">{{ post.title }}</h1>
                                         <p>{{ post.intro }}</p>
                                     </a>
 
+                                </div>
+                            {% empty %}
+                                <div class="content">
+                                    <p>Nu au fost gasite rezultate</p>
                                 </div>
                             {% endfor %}
                         </div>

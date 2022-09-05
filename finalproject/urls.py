@@ -22,6 +22,7 @@ urlpatterns = [
     path('admin/', admin.site.urls),
     path('', include('MainPage.urls')),
     path('core/', frontpage, name='frontpage'),
-    path('about/', about, name='about')
+    path('about/', about, name='about'),
+    path('', include('ganduri.urls')),
     # path('contact',include('contact'))
 ]
