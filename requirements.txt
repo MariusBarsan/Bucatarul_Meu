@@ -50,3 +50,4 @@ virtualenvwrapper-win==1.2.7
 webencodings==0.5.1
 wsproto==1.1.0
 zipp==3.7.0
+Pillow==9.2.0
