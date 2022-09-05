@@ -13,11 +13,22 @@ Including another URLconf
     1. Import the include() function: from django.urls import include, path
     2. Add a URL to urlpatterns:  path('MainPage/', include('MainPage.urls'))
 """
+
 from django.contrib import admin
+from django.contrib.auth.views import LoginView, PasswordChangeView, PasswordResetView, PasswordResetConfirmView
 from django.urls import path, include
+
+from userextend.forms import AuthenticationLoginForm, PasswordChangeFormExtend, PasswordResetFormExtend, \
+    SetPasswordFormExtend
 
 urlpatterns = [
     path('admin/', admin.site.urls),
     path('', include('MainPage.urls')),
     # path('contact',include('contact'))
+    path('login/', LoginView.as_view(form_class=AuthenticationLoginForm), name='login'),
+    path('password_change/', PasswordChangeView.as_view(form_class=PasswordChangeFormExtend), name='password_change'),
+    path("password_reset/", PasswordResetView.as_view(form_class=PasswordResetFormExtend), name="password_reset"),
+    path('reset/<uidb64>/<token>', PasswordResetConfirmView.as_view(form_class=SetPasswordFormExtend)),
+    path('', include('django.contrib.auth.urls')),
+    path('',include('userextend.urls')),
 ]
