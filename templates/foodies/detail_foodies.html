@@ -1,0 +1,31 @@
+{% extends 'base.html' %}
+{% load static %}
+{% block title %} testing {% endblock %}
+
+{% block content %}
+    <br>
+    <br>
+    <div class="row justify-content-center">
+        {% for recipe in recipes %}
+            <div class="col-md-6 foodie-div-settings">
+                <img src="{% static 'images/alex-munsell-Yr4n8O_3UPc-unsplash.jpg' %}" class="card"
+                     style="width:-webkit-fill-available">
+
+
+            </div>
+            <div class="col-md-6 foodie-div-settings">
+
+                <h3>{{ recipe.title }}</h3>
+
+                <h5>{{ recipe.ingredients }}</h5>
+
+                <p>{{ recipe.description }}</p>
+
+
+            </div>
+        {% endfor %}
+    </div>
+    <br>
+    <br>
+
+{% endblock %}

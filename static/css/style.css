@@ -586,3 +586,23 @@ body * {
 h5.card-title {
     color: black;
 }
+
+/*FOODIE*/
+
+.foodie-div-settings{
+    padding: 2rem;
+}
+
+
+
+
+/*FOODIE*/
+
+
+/*CONTACT*/
+
+.display_form p{
+    display: grid;
+}
+
+/*CONTACT*/

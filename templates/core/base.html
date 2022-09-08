@@ -29,7 +29,7 @@
 <nav class="navbar">
     <div class="container">
         <div class="navbar-brand">
-            <a class="navbar-item" href="/">
+            <a class="navbar-item" href="/core">
                 <strong>BucatarulM.eu Blog</strong>
             </a>
             <span class="navbar-burger burger" data-target="navbarMenu">
@@ -52,7 +52,7 @@
                 </div>
             </div>
         </div>
-                <a href="/core" class="navbar-item is-active is-size-5 has-text-weight-semibold">
+                <a href="{% url 'index' %}" class="navbar-item is-active is-size-5 has-text-weight-semibold">
                     Home
                 </a>
                 <a href="{% url 'about' %}" class="navbar-item is-size-5 has-text-weight-semibold">

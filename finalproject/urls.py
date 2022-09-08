@@ -28,11 +28,12 @@ urlpatterns = [
     path('core/', frontpage, name='frontpage'),
     path('about/', about, name='about'),
     path('', include('ganduri.urls')),
-    # path('contact',include('contact'))
     path('login/', LoginView.as_view(form_class=AuthenticationLoginForm), name='login'),
     path('password_change/', PasswordChangeView.as_view(form_class=PasswordChangeFormExtend), name='password_change'),
     path("password_reset/", PasswordResetView.as_view(form_class=PasswordResetFormExtend), name="password_reset"),
     path('reset/<uidb64>/<token>', PasswordResetConfirmView.as_view(form_class=SetPasswordFormExtend)),
     path('', include('django.contrib.auth.urls')),
     path('',include('userextend.urls')),
+    path('', include('foodies.urls')),
+    path('contact/',include('contact.urls')),
 ]
