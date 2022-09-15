@@ -1,6 +1,8 @@
 from django.db import models
 from autoslug import AutoSlugField
 
+from userextend.models import UserExtend
+
 
 class Topic(models.Model):
     title = models.CharField(max_length=200)
@@ -12,7 +14,7 @@ class Topic(models.Model):
 class Recipe(models.Model):
     title = models.CharField(max_length=200)
     slug = AutoSlugField(populate_from="title",max_length=200)
-    image = models.ImageField(upload_to='media/',null=True)
+    image = models.ImageField(upload_to='media/',null=True,blank=True)
     description = models.TextField()
     ingredients = models.TextField()
     directions = models.TextField()
@@ -27,3 +29,8 @@ class Recipe(models.Model):
     def __str__(self):
         return self.title
 
+
+class Rating(models.Model):
+    recipe = models.ForeignKey(Recipe,on_delete=models.CASCADE)
+    user = models.ForeignKey(UserExtend,on_delete=models.CASCADE)
+    number = models.IntegerField()

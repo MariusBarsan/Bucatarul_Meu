@@ -6,23 +6,24 @@
     <br>
     <br>
     <div class="row justify-content-center">
-    {% if not recipes %}
-        <p>mesaj</p>
-    {% endif %}
+        {% if not recipes %}
+            <p>mesaj de adaugat</p>
+        {% endif %}
         {% for recipe in recipes %}
             <div class="col-md-6 foodie-div-settings">
-                <img src="{% static 'images/alex-munsell-Yr4n8O_3UPc-unsplash.jpg' %}" class="card"
-                     style="width:-webkit-fill-available">
 
+            <h3>{{ recipe.title }}</h3>
+                {% if recipe.image %}
+                    <a href="{% url 'detail-view' recipe.id %}"><img src="{% static recipe.image.url %}" class="card"
 
-            </div>
-            <div class="col-md-6 foodie-div-settings">
+                         style="width:-webkit-fill-available"></a>
+                {% else %}
+                  <a href="#">  <img src="#" class="card"
 
-                <h3>{{ recipe.title }}</h3>
+                         style="width:-webkit-fill-available"></a>
 
-                <h5>{{ recipe.ingredients }}</h5>
+                {% endif %}
 
-                <p>{{ recipe.description }}</p>
 
 
             </div>
