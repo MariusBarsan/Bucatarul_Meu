@@ -3,34 +3,40 @@
 {% block title %} Food Details {% endblock %}
 
 {% block content %}
-    <br>
-    <br>
-    <div class="row justify-content-center">
 
-            <div class="col-md-6 foodie-div-settings">
-            <h3>{{ recipe.title }}</h3>
-                <h4>{{ average_rating }}</h4>
 
-            <h5>{{ recipe.ingredients }}</h5>
+    <div class="container text-center">
+    <div class="col-md-12">
+        <div class="card border-dark">
+            <h3 class="card-title text-center text-dark card-header">{{ recipe.title }}</h3>
+            <div class="card-body text-center text-dark">
+                <div class="row">
+                    <div class="col-md-6 col-sm-6 col-6">
+                        <img src="{% static recipe.image.url %}" style="width: inherit;height: auto">
+                    </div>
+                    <div class="col-md-6 col-sm-6 col-6">
 
-            <p>{{ recipe.description }}</p>
+                        <p><b> Ingredients</b> : {{ recipe.ingredients }}</p>
+                        <p><b>Description</b> : {{ recipe.description }}</p>
+                        {% if user.is_authenticated %}
+                            <h4>Rating : {{ average_rating }}</h4>
+                            {% if not has_rated %}
+                                <form action="{% url 'create_rating' recipe.id %}" method="post">
+                                    {% csrf_token %}
+                                    <input type="number" name="number" required="" id="id_number" min="0" max="5"
+                                           class="border-light">
 
+                                    <input type="submit" value="Add rating" class="border-light">
+                                </form>
+                            {% endif %}
+                        {% endif %}
+                    </div>
+                </div>
             </div>
-            <div class="col-md-6 foodie-div-settings">
-                {% if not has_rated %}
-                <form action="{% url 'create_rating' recipe.id %}" method="post">
-                        {% csrf_token %}
-                    <input type="number" name="number" required="" id="id_number" min="0" max="5" >
-
-                    <input type="submit" value="Add rating">
-                </form>
-                {% endif %}
-{#                <a href="{% url 'create_rating' recipe.id %}" class="btn btn-success">Rating Button</a>#}
-
-            </div>
+        </div>
 
     </div>
-    <br>
-    <br>
+
+
 
 {% endblock %}
