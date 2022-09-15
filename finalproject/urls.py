@@ -36,4 +36,5 @@ urlpatterns = [
     path('',include('userextend.urls')),
     path('', include('foodies.urls')),
     path('contact/',include('contact.urls')),
+    path('todo/',include('todoapp.urls')),
 ]

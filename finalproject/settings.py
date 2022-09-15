@@ -41,6 +41,7 @@ INSTALLED_APPS = [
     'ganduri',
     'userextend',
     'foodies',
+    'todoapp',
 
 ]
 
