@@ -19,7 +19,7 @@
                         <p><b> Ingredients</b> : {{ recipe.ingredients }}</p>
                         <p><b>Description</b> : {{ recipe.description }}</p>
                         {% if user.is_authenticated %}
-                            <h4>Rating : {{ average_rating }}</h4>
+                            <h4>Rating : {{ average_rating|floatformat:2 }}</h4>
                             {% if not has_rated %}
                                 <form action="{% url 'create_rating' recipe.id %}" method="post">
                                     {% csrf_token %}

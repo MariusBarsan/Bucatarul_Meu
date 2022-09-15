@@ -19,7 +19,7 @@ def homeview(request):
     return render(request, 'MainPage/index.html')
 
 
-class FoodieListView(ListView,LoginRequiredMixin):
+class FoodieListView(ListView, LoginRequiredMixin):
     model = Recipe
     context_object_name = 'recipes'
     template_name = 'foodies/search_foodies.html'
@@ -47,7 +47,7 @@ class FoodieListView(ListView,LoginRequiredMixin):
         return context
 
 
-class CreateRatingView(CreateView,LoginRequiredMixin):
+class CreateRatingView(CreateView, LoginRequiredMixin):
     form_class = RatingForm
     model = Rating
     success_url = reverse_lazy('index')
@@ -59,7 +59,7 @@ class CreateRatingView(CreateView,LoginRequiredMixin):
         return kwargs
 
 
-class DetailFoodiesView(DetailView,LoginRequiredMixin):
+class DetailFoodiesView(DetailView, LoginRequiredMixin):
     model = Recipe
     context_object_name = 'recipe'
     template_name = 'foodies/detail_foodies.html'
@@ -74,11 +74,11 @@ class DetailFoodiesView(DetailView,LoginRequiredMixin):
 
         return data
 
+
 @login_required
 def rating(request, recipe_id):
     rating_number = request.POST.get('number')
     if 0 <= rating_number <= 5:
         Rating.objects.create(recipe=Recipe.objects.get(id=recipe_id), user=UserExtend.objects.get(id=request.user.id),
                               number=rating_number)
-
     return redirect('detail-view', pk=recipe_id)
