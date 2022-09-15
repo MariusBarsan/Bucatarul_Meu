@@ -518,7 +518,6 @@ body * {
 }
 
 
-
 .testing a input {
     position: relative;
     color: #fff;
@@ -580,6 +579,11 @@ body * {
     }
 }
 
+/*.internation-recipes {*/
+/*    padding: 1rem;*/
+/*    color: black;*/
+/*}*/
+
 /*BUTTON*/
 
 
@@ -589,11 +593,9 @@ h5.card-title {
 
 /*FOODIE*/
 
-.foodie-div-settings{
+.foodie-div-settings {
     padding: 2rem;
 }
-
-
 
 
 /*FOODIE*/
@@ -601,7 +603,7 @@ h5.card-title {
 
 /*CONTACT*/
 
-.display_form p{
+.display_form p {
     display: grid;
 }
 

@@ -1,5 +1,6 @@
 {% load static %}
 
+{% if user.is_authenticated %}
 <section class="menu menu--circle">
     <input type="checkbox" id="menu__active"/>
     <label for="menu__active" class="menu__active">
@@ -16,14 +17,14 @@
                 <li>
                     <div class="placeholder">
                         <div class="upside">
-                            <a href="#" class="button"><i class="fa-solid fa-bowl-food"></i></a>
+                            <a href="{% url 'recipes' %}?soups=soups" class="button" id="soups" ><i class="fa-solid fa-bowl-food"  ></i></a>
                         </div>
                     </div>
                 </li>
                 <li>
                     <div class="placeholder">
                         <div class="upside">
-                            <a href="#" class="button"><i class="fa-solid fa-burger"></i></a>
+                            <a href="{% url 'recipes' %}?burgers=burgers" class="button" id="burgers"><i class="fa-solid fa-burger" ></i></a>
                         </div>
                     </div>
                 </li>
@@ -37,49 +38,49 @@
                 <li>
                     <div class="placeholder">
                         <div class="upside">
-                            <a href="#" class="button"><i class="fa-solid fa-fish"></i></a>
+                            <a href="{% url 'recipes' %}?fish=fish" class="button" id="fish"><i class="fa-solid fa-fish"></i></a>
                         </div>
                     </div>
                 </li>
                 <li>
                     <div class="placeholder">
                         <div class="upside">
-                            <a href="#" class="button"><i class="fa-solid fa-cake-candles"></i></a>
+                            <a href="{% url 'recipes' %}?sweets=sweets" class="button" id="sweets"><i class="fa-solid fa-cake-candles"></i></a>
                         </div>
                     </div>
                 </li>
                 <li>
                     <div class="placeholder">
                         <div class="upside">
-                            <a href="#" class="button"><i class="fa-solid fa-martini-glass"></i></a>
+                            <a href="{% url 'recipes' %}?drinks=drinks" class="button" id="drinks"><i class="fa-solid fa-martini-glass"></i></a>
                         </div>
                     </div>
                 </li>
                 <li>
                     <div class="placeholder">
                         <div class="upside">
-                            <a href="#" class="button"><i class="fa-solid fa-hotdog"></i></a>
+                            <a href="{% url 'recipes' %}?hotdog=hotdog" class="button" id="hotdog"><i class="fa-solid fa-hotdog"></i></a>
                         </div>
                     </div>
                 </li>
                 <li>
                     <div class="placeholder">
                         <div class="upside">
-                            <a href="#" class="button"><i class="fa-solid fa-pizza-slice"></i></a>
+                            <a href="{% url 'recipes' %}?pizza=pizza" class="button" id="pizza"><i class="fa-solid fa-pizza-slice"></i></a>
                         </div>
                     </div>
                 </li>
                 <li>
                     <div class="placeholder">
                         <div class="upside">
-                            <a href="#" class="button"><i class="fa-solid fa-bread-slice"></i></a>
+                            <a href="{% url 'recipes' %}?bread=bread" class="button" id="bread"><i class="fa-solid fa-bread-slice"></i></a>
                         </div>
                     </div>
                 </li>
                 <li>
                     <div class="placeholder">
                         <div class="upside">
-                            <a href="#" class="button"><i class="fa-solid fa-bowl-rice"></i></a>
+                            <a href="{% url 'recipes' %}?rice=rice" class="button" id="rice"><i class="fa-solid fa-bowl-rice"></i></a>
                         </div>
                     </div>
                 </li>
@@ -102,6 +103,7 @@
         </div>
     </label>
 </section>
+{% endif %}
 
 <nav class="navbar navbar-expand-lg navbar-dark bg-dark">
 
@@ -128,7 +130,9 @@
                 <a href="{% url 'create-user' %}" class="nav-link">Sign Up</a>
             {% endif %}
             </li>
+            <li class="nav-item"><a class="nav-link" href="{% url 'index' %}">Acasa</a></li>
             <li class="nav-item"><a class="nav-link" href="/core">Ganduri</a></li>
+            <li class="nav-item"><a class="nav-link" href="#">Lista Cumparaturi</a></li>
             <li class="nav-item"><a class="nav-link" href="{% url 'contact' %}">Contact</a></li>
 
         </ul>

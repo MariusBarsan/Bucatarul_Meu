@@ -1,29 +1,34 @@
 {% extends 'base.html' %}
 {% load static %}
-{% block title %} testing {% endblock %}
+{% block title %} Food Details {% endblock %}
 
 {% block content %}
     <br>
     <br>
     <div class="row justify-content-center">
-        {% for recipe in recipes %}
-            <div class="col-md-6 foodie-div-settings">
-                <img src="{% static 'images/alex-munsell-Yr4n8O_3UPc-unsplash.jpg' %}" class="card"
-                     style="width:-webkit-fill-available">
 
+            <div class="col-md-6 foodie-div-settings">
+            <h3>{{ recipe.title }}</h3>
+                <h4>{{ average_rating }}</h4>
+
+            <h5>{{ recipe.ingredients }}</h5>
+
+            <p>{{ recipe.description }}</p>
 
             </div>
             <div class="col-md-6 foodie-div-settings">
+                {% if not has_rated %}
+                <form action="{% url 'create_rating' recipe.id %}" method="post">
+                        {% csrf_token %}
+                    <input type="number" name="number" required="" id="id_number" min="0" max="5" >
 
-                <h3>{{ recipe.title }}</h3>
-
-                <h5>{{ recipe.ingredients }}</h5>
-
-                <p>{{ recipe.description }}</p>
-
+                    <input type="submit" value="Add rating">
+                </form>
+                {% endif %}
+{#                <a href="{% url 'create_rating' recipe.id %}" class="btn btn-success">Rating Button</a>#}
 
             </div>
-        {% endfor %}
+
     </div>
     <br>
     <br>
