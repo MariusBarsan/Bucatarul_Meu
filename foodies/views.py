@@ -67,7 +67,10 @@ class DetailFoodiesView(DetailView, LoginRequiredMixin):
     def get_context_data(self, **kwargs):
         data = super().get_context_data(**kwargs)
         ratings = self.object.rating_set.aggregate(Sum('number')).get('number__sum')  # sum of ratings
-        average_rating = ratings / self.object.rating_set.count()
+        if not ratings:
+            average_rating = 0
+        else:
+            average_rating = ratings / self.object.rating_set.count()
         data['average_rating'] = average_rating
         has_rated = Rating.objects.filter(user__id=self.request.user.id, recipe=self.object).count() >= 1
         data['has_rated'] = has_rated
@@ -77,7 +80,7 @@ class DetailFoodiesView(DetailView, LoginRequiredMixin):
 
 @login_required
 def rating(request, recipe_id):
-    rating_number = request.POST.get('number')
+    rating_number = int(request.POST.get('number'))
     if 0 <= rating_number <= 5:
         Rating.objects.create(recipe=Recipe.objects.get(id=recipe_id), user=UserExtend.objects.get(id=request.user.id),
                               number=rating_number)

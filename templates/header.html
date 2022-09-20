@@ -1,108 +1,117 @@
 {% load static %}
 
 {% if user.is_authenticated %}
-<section class="menu menu--circle">
-    <input type="checkbox" id="menu__active"/>
-    <label for="menu__active" class="menu__active">
-        <div class="menu__toggle">
-            <div class="icons">
-                <div class="hamburger"></div>
+    <section class="menu menu--circle">
+        <input type="checkbox" id="menu__active"/>
+        <label for="menu__active" class="menu__active">
+            <div class="menu__toggle">
+                <div class="icons">
+                    <div class="hamburger"></div>
+                </div>
             </div>
-        </div>
-        <input type="radio" name="arrow--up" id="degree--up-0"/>
-        <input type="radio" name="arrow--up" id="degree--up-1"/>
-        <input type="radio" name="arrow--up" id="degree--up-2"/>
-        <div class="menu__listings">
-            <ul class="circle">
-                <li>
-                    <div class="placeholder">
-                        <div class="upside">
-                            <a href="{% url 'recipes' %}?soups=soups" class="button" id="soups" ><i class="fa-solid fa-bowl-food"  ></i></a>
+            <input type="radio" name="arrow--up" id="degree--up-0"/>
+            <input type="radio" name="arrow--up" id="degree--up-1"/>
+            <input type="radio" name="arrow--up" id="degree--up-2"/>
+            <div class="menu__listings">
+                <ul class="circle">
+                    <li>
+                        <div class="placeholder">
+                            <div class="upside">
+                                <a href="{% url 'recipes' %}?soups=soups" class="button" id="soups"><i
+                                        class="fa-solid fa-bowl-food"></i></a>
+                            </div>
                         </div>
-                    </div>
-                </li>
-                <li>
-                    <div class="placeholder">
-                        <div class="upside">
-                            <a href="{% url 'recipes' %}?burgers=burgers" class="button" id="burgers"><i class="fa-solid fa-burger" ></i></a>
+                    </li>
+                    <li>
+                        <div class="placeholder">
+                            <div class="upside">
+                                <a href="{% url 'recipes' %}?burgers=burgers" class="button" id="burgers"><i
+                                        class="fa-solid fa-burger"></i></a>
+                            </div>
                         </div>
-                    </div>
-                </li>
-                <li>
-                    <div class="placeholder">
-                        <div class="upside">
-                            <a href="#">&nbsp</a>
+                    </li>
+                    <li>
+                        <div class="placeholder">
+                            <div class="upside">
+                                <a href="#">&nbsp</a>
+                            </div>
                         </div>
-                    </div>
-                </li>
-                <li>
-                    <div class="placeholder">
-                        <div class="upside">
-                            <a href="{% url 'recipes' %}?fish=fish" class="button" id="fish"><i class="fa-solid fa-fish"></i></a>
+                    </li>
+                    <li>
+                        <div class="placeholder">
+                            <div class="upside">
+                                <a href="{% url 'recipes' %}?fish=fish" class="button" id="fish"><i
+                                        class="fa-solid fa-fish"></i></a>
+                            </div>
                         </div>
-                    </div>
-                </li>
-                <li>
-                    <div class="placeholder">
-                        <div class="upside">
-                            <a href="{% url 'recipes' %}?sweets=sweets" class="button" id="sweets"><i class="fa-solid fa-cake-candles"></i></a>
+                    </li>
+                    <li>
+                        <div class="placeholder">
+                            <div class="upside">
+                                <a href="{% url 'recipes' %}?sweets=sweets" class="button" id="sweets"><i
+                                        class="fa-solid fa-cake-candles"></i></a>
+                            </div>
                         </div>
-                    </div>
-                </li>
-                <li>
-                    <div class="placeholder">
-                        <div class="upside">
-                            <a href="{% url 'recipes' %}?drinks=drinks" class="button" id="drinks"><i class="fa-solid fa-martini-glass"></i></a>
+                    </li>
+                    <li>
+                        <div class="placeholder">
+                            <div class="upside">
+                                <a href="{% url 'recipes' %}?drinks=drinks" class="button" id="drinks"><i
+                                        class="fa-solid fa-martini-glass"></i></a>
+                            </div>
                         </div>
-                    </div>
-                </li>
-                <li>
-                    <div class="placeholder">
-                        <div class="upside">
-                            <a href="{% url 'recipes' %}?hotdog=hotdog" class="button" id="hotdog"><i class="fa-solid fa-hotdog"></i></a>
+                    </li>
+                    <li>
+                        <div class="placeholder">
+                            <div class="upside">
+                                <a href="{% url 'recipes' %}?hotdog=hotdog" class="button" id="hotdog"><i
+                                        class="fa-solid fa-hotdog"></i></a>
+                            </div>
                         </div>
-                    </div>
-                </li>
-                <li>
-                    <div class="placeholder">
-                        <div class="upside">
-                            <a href="{% url 'recipes' %}?pizza=pizza" class="button" id="pizza"><i class="fa-solid fa-pizza-slice"></i></a>
+                    </li>
+                    <li>
+                        <div class="placeholder">
+                            <div class="upside">
+                                <a href="{% url 'recipes' %}?pizza=pizza" class="button" id="pizza"><i
+                                        class="fa-solid fa-pizza-slice"></i></a>
+                            </div>
                         </div>
-                    </div>
-                </li>
-                <li>
-                    <div class="placeholder">
-                        <div class="upside">
-                            <a href="{% url 'recipes' %}?bread=bread" class="button" id="bread"><i class="fa-solid fa-bread-slice"></i></a>
+                    </li>
+                    <li>
+                        <div class="placeholder">
+                            <div class="upside">
+                                <a href="{% url 'recipes' %}?bread=bread" class="button" id="bread"><i
+                                        class="fa-solid fa-bread-slice"></i></a>
+                            </div>
                         </div>
-                    </div>
-                </li>
-                <li>
-                    <div class="placeholder">
-                        <div class="upside">
-                            <a href="{% url 'recipes' %}?rice=rice" class="button" id="rice"><i class="fa-solid fa-bowl-rice"></i></a>
+                    </li>
+                    <li>
+                        <div class="placeholder">
+                            <div class="upside">
+                                <a href="{% url 'recipes' %}?rice=rice" class="button" id="rice"><i
+                                        class="fa-solid fa-bowl-rice"></i></a>
+                            </div>
                         </div>
-                    </div>
-                </li>
-            </ul>
-        </div>
-        <div class="menu__arrow menu__arrow--top">
-            <ul>
-                <li>
-                    <label for="degree--up-0">
-                        <div class="arrow"></div>
-                    </label>
-                    <label for="degree--up-1">
-                        <div class="arrow"></div>
-                    </label>
-                    <label for="degree--up-2">
-                        <div class="arrow"></div>
-                    </label>
-                </li>
-            </ul>
-        </div>
-    </label>
-</section>
+                    </li>
+                </ul>
+            </div>
+            <div class="menu__arrow menu__arrow--top">
+                <ul>
+                    <li>
+                        <label for="degree--up-0">
+                            <div class="arrow"></div>
+                        </label>
+                        <label for="degree--up-1">
+                            <div class="arrow"></div>
+                        </label>
+                        <label for="degree--up-2">
+                            <div class="arrow"></div>
+                        </label>
+                    </li>
+                </ul>
+            </div>
+        </label>
+    </section>
 {% endif %}
 
 <nav class="navbar navbar-expand-lg navbar-dark bg-dark">
@@ -118,6 +127,7 @@
     <div class="collapse navbar-collapse" id="navbarTogglerDemo02">
 
         <ul class="navbar-nav ms-auto">
+            <li class="nav-item"><a class="nav-link" href="{% url 'index' %}">Acasa</a></li>
 
             {% if user.is_authenticated %}
                 <li class="nav-item useraccess">
@@ -130,9 +140,13 @@
                 <a href="{% url 'create-user' %}" class="nav-link">Sign Up</a>
             {% endif %}
             </li>
-            <li class="nav-item"><a class="nav-link" href="{% url 'index' %}">Acasa</a></li>
+
             <li class="nav-item"><a class="nav-link" href="/core">Ganduri</a></li>
-            <li class="nav-item"><a class="nav-link" href="{% url 'alltodos' %}">Lista Cumparaturi</a></li>
+            {% if user.is_authenticated %}
+
+
+                <li class="nav-item"><a class="nav-link" href="{% url 'alltodos' %}">Lista Cumparaturi</a></li>
+            {% endif %}
             <li class="nav-item"><a class="nav-link" href="{% url 'contact' %}">Contact</a></li>
 
         </ul>

@@ -607,4 +607,42 @@ h5.card-title {
     display: grid;
 }
 
+.button-back a {
+    text-decoration: none;
+}
+
+.card-footer-edit {
+    border: none;
+    background-color: initial;
+}
+
 /*CONTACT*/
+
+
+/*LISTA DE CUMPARATURI*/
+
+.to-do-edit{
+    padding: 2rem;
+}
+.to-do-edit p{
+    color: white;
+}
+
+.to-do-edit label{
+    color: white;
+}
+
+.update-settings{
+    padding: 5rem;
+}
+
+
+/*LISTA DE CUMPARATURI*/
+
+/*USEREXTEND*/
+
+.password-change-css{
+    color: black;
+}
+
+/*USEREXTEND*/
