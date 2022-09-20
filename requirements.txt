@@ -9,7 +9,10 @@ charset-normalizer==2.0.12
 colorama==0.4.4
 cryptography==36.0.1
 distlib==0.3.4
+dj-database-url==1.0.0
 Django==4.0.2
+django-autoslug==1.9.8
+django-heroku==0.3.1
 docutils==0.18.1
 filelock==3.6.0
 h11==0.13.0
@@ -19,8 +22,10 @@ keyring==23.5.0
 marius-lib==0.1
 outcome==1.1.0
 packaging==21.3
+Pillow==9.2.0
 pkginfo==1.8.2
 platformdirs==2.5.1
+psycopg2==2.9.3
 pycparser==2.21
 Pygments==2.11.2
 pymongo==4.0.1
@@ -48,7 +53,6 @@ urllib3==1.26.8
 virtualenv==20.13.2
 virtualenvwrapper-win==1.2.7
 webencodings==0.5.1
+whitenoise==6.2.0
 wsproto==1.1.0
 zipp==3.7.0
-Pillow==9.2.0
-psycopg2==2.9.3
