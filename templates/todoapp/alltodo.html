@@ -7,21 +7,21 @@
 
     <div class="container">
         <div class="row">
-            <div class="col-md-12 col-sm-12 col-12 text-dark text-center"
+            <div class="col-md-12 col-sm-12 col-12 text-dark text-center to-do-edit">
             <form method="POST">
                 {% csrf_token %}
                 {{ form }}
-                <button type="submit">Adauga</button>
+                <button type="submit" class="btn btn-primary">Adauga</button>
             </form>
 
 
             {% for todo in tasks %}
                 <p>{{ todo.task }}</p>
-                <a href="{% url 'updateItem' todo.id %}" class="btn btn-outline-primary">
-                    <button>Update</button>
+                <a href="{% url 'updateItem' todo.id %}">
+                    <button class="btn btn-primary">Update</button>
                 </a>
                 <a href="{% url 'deleteItem' todo.id %}">
-                    <button>Sterge</button>
+                    <button class="btn btn-danger">Sterge</button>
                 </a>
 
             {% endfor %}
